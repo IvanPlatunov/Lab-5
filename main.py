@@ -44,7 +44,7 @@ df.to_csv('result.csv', index=False)
 #Additional task
 f5 = open('task_add.txt', errors='ignore').read()
 email = r'[a-zA-Z0-9]+\@[a-zA-Z0-9-]+\.[a-z]{2,}'
-date = r'(\d+\-\d+\-\d+)|(\d+\/\d+\/\d+)|(\d+\.\d+\.\d+)'
+date = r'((\d{4}\-\d+\-\d+)|(\d{4}\/\d+\/\d+)|(\d{4}\.\d+\.\d+))|((\d+\-\d+\-\d{4})|(\d+\/\d+\/\d{4})|(\d+\.\d+\.\d{4}))'
 site = r'(?:http|https)://(?:www\.|)[a-zA-Z-]+\.[a-z]+'
 match_e = re.findall(email, f5)
 match_d = re.findall(date, f5)
