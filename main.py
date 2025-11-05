@@ -1,5 +1,5 @@
 import re
-import pandas
+import pandas as pd
 #Task 1
 f = open('task1-en.txt', errors='ignore').read()
 
@@ -33,3 +33,10 @@ arr_sur = re.findall(surname, f4)
 arr_em = re.findall(email,f4)
 arr_date = re.findall(date,f4)
 arr_site = re.findall(site, f4)
+
+header = ['Id', 'Surname', 'Email', 'Date', 'Site']
+table = []
+for i in range(len(arr_id)):
+    table.append((arr_id[i], arr_sur[i], arr_em[i], arr_date[i], arr_site[i]))
+df = pd.DataFrame(table, columns=header)
+df.to_csv('result.csv', index=False)
